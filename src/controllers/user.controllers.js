@@ -1,5 +1,5 @@
 import { response } from "express";
-import { asyncHandler } from "../utils/asyncHandler.js";
+import { asyncHandler } from "../utils/ayncHandler.js"
 
 const registerUser = asyncHandler( async (req, res) => {
     //get user deatils from frontend
@@ -12,7 +12,14 @@ const registerUser = asyncHandler( async (req, res) => {
     //check for user creation
     //return response
     const {fullname, email, username, password} = req.body
-    console.log("email ", email);    
+    console.log("email ", email);  
+    
+    
+    res.status(200).json(
+        {
+            message:"ok"
+            }
+    )
     
 })
 
