@@ -49,6 +49,3 @@ const uploadResult = await cloudinary.uploader
  
     
     
-
-
-
