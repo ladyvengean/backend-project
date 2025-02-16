@@ -28,6 +28,65 @@ export const getAvailableCollectors = asyncHandler(async(req,res) => {
     })
 });
 
+
+
+// export const assignCollector = asyncHandler(async (req, res) => {
+//     const { reportId, collectorId } = req.body;
+
+//     // Validate IDs
+//     if (!mongoose.Types.ObjectId.isValid(reportId) || !mongoose.Types.ObjectId.isValid(collectorId)) {
+//         throw new Apierror(400, "Invalid reportId or collectorId");
+//     }
+
+//     // Find the report by ID
+//     const report = await WasteReport.findById(reportId);
+//     if (!report) {
+//         throw new Apierror(404, "Waste report not found");
+//     }
+
+//     // Find the collector by ID
+//     const collector = await Collector.findById(collectorId);
+//     if (!collector) {  // FIXED TYPO
+//         throw new Apierror(404, "Collector not found");
+//     }
+
+//     // Assign the collector to the report
+//     report.assignedCollector = collectorId;
+//     await report.save();
+
+//     // Mark collector as unavailable
+//     collector.isAvailable = false;
+//     await collector.save();
+
+//     return res.status(200).json({
+//         success: true,
+//         message: "Collector assigned successfully!",
+//         reportId: report._id,
+//         collectorId: collector._id
+//     });
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //assign the collector to a report
 export const assignCollector = asyncHandler(async(req, res) => {
     const {reportId, collectorId} = req.body;
