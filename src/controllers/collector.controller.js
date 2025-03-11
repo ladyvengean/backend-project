@@ -70,23 +70,6 @@ export const getAvailableCollectors = asyncHandler(async(req,res) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //assign the collector to a report
 export const assignCollector = asyncHandler(async(req, res) => {
     const {reportId, collectorId} = req.body;
