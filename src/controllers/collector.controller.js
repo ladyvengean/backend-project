@@ -95,16 +95,12 @@ export const assignCollector = asyncHandler(async(req, res) => {
 
     return res.status(200).json({
         success: true,
-        message: "collector assigned yayy",
+        message: "collector assigned",
         reportId: report._id,
         collectorId: collector._id
-    })
-
-
-    
+    })    
 }) 
 
-//update collector ka status ki pick kiya hai ya ni ya available hai ya ni
 export const updateCollectorStatus = asyncHandler(async(req,res) => {
     const {collectorId, status} = req.body;
     if (!collectorId || !status) {
@@ -112,7 +108,7 @@ export const updateCollectorStatus = asyncHandler(async(req,res) => {
     }
     const collector = await Collector.findById(collectorId)
     if(!collector){
-        throw new Apierror(404,"collector not found")
+        throw new Apierror(404,"collector not found")   
     } 
 
     collector.isAvailable = status === "available";
